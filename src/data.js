@@ -35,5 +35,4 @@ export const queryDetails = {
   }
 }
 
-
 export default queries
