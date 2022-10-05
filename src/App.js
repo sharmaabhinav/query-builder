@@ -6,6 +6,7 @@ import DropDown from './components/Dropdown';
 import DataTable from './components/DataTable';
 import FormDialog from './components/FormDialog';
 import queries, { queryDetails } from "./data.js"
+import exportToFile from './util';
 
 function App() {
   const [queryOptions, setQueryOptions] = useState(queries)
@@ -45,6 +46,10 @@ function App() {
     }
   }
 
+  const handleExport = () => {
+    exportToFile(query, `${queryName}.sql`)
+  }
+
   const onSaveDialogClose = () => {
     setShowSaveDialog(false)
   }
@@ -57,6 +62,7 @@ function App() {
 
   const onQuerySave = (name) => {
     setShowSaveDialog(false)
+    setQueryName(name)
     setQueryOptions((prevOptions) => [...prevOptions, name])
     setQueryData((prevData) => {
       return {
@@ -99,6 +105,18 @@ function App() {
             variant='outlined'
             sx={
               {
+                width: 220,
+                mr: 3
+              }
+            }
+            onClick={handleExport}
+          >
+            Export
+          </Button>
+          <Button
+            variant='outlined'
+            sx={
+              {
                 width: 220 ,
                 mr: 3
               }
@@ -107,7 +125,6 @@ function App() {
           >
             Save
           </Button>
-
           <Button
             variant='contained'
             sx={{width: 220}}
