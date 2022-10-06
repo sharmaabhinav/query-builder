@@ -6,13 +6,15 @@ const DropDown = ({
     value,
     options,
     onSelect,
-    style
+    style,
+    isClearable
   }) => {
     return (
       <AutoComplete
         options={options}
         sx={style}
         value={value}
+        disableClearable={isClearable}
         onChange={(event, newValue) => onSelect(newValue)}
         renderInput={(params) => <TextField label={label} {...params} />}
       />

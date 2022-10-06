@@ -86,6 +86,7 @@ function App() {
           style={{
             width: "25%",
           }}
+          isClearable
         />
         <TextField
           label='Enter your SQL query'
