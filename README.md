@@ -1,6 +1,30 @@
-# Getting Started with Create React App
+# Overview of the project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Basic
+    1)  User can select a query from predefined queries and execute it.
+    2)  User can type in a query and execute it.
+## Advanced
+    1)  User can save a query for later execution
+    2)  User can export a query to use it with other tools
+
+
+# Framework and libraries
+    1) React
+    2) material-ui
+    3) styled-components
+
+# Page load Time
+
+    Metrics collected using lighthouse tool
+
+    1) FCP 0.3 sec
+    2) LCP 0.5 sec
+    3) Time to interactive 0.6 sec
+
+# Performance optimisations
+
+    1) Paginated table to render large amount of rows asscoiated with a query
+
 
 ## Available Scripts
 
